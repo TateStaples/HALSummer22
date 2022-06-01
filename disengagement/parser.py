@@ -33,7 +33,7 @@ makers = list(set(data["Manufacturer"]))
 # permits = set(data["Permit Number"])  # this is the same info as the manufacture just in different format
 disengagements = set(data["DISENGAGEMENT INITIATED BY\n(AV System, Test Driver, Remote Operator, or Passenger)"]) # remote and passenger aren't in the data
 locations = set(data["DISENGAGEMENT\nLOCATION\n(Interstate, Freeway, Highway, Rural Road, Street, or Parking Facility)"])
-descriptions = set(data["DESCRIPTION OF FACTS CAUSING DISENGAGEMENT"])
+descriptions = list(set(data["DESCRIPTION OF FACTS CAUSING DISENGAGEMENT"]))
 print(f"{makers=}") # {'TOYOTA RESEARCH INSTITUTE, INC.', 'ZOOX, INC', 'GATIK AI INC.', 'NURO, INC', 'MERCEDES-BENZ RESEARCH & DEVELOPMENT NORTH AMERICA, INC.', 'ARGO AI, LLC', 'AIMOTIVE INC.', 'NISSAN NORTH AMERICA, INC DBA ALLIANCE INNOVATION LAB', 'AUTOX TECHNOLOGIES, INC', 'LYFT', 'UDELV, INC.', 'APOLLO AUTONOMOUS DRIVING USA LLC', 'NVIDIA', 'APPLE INC.', 'WERIDE CORP', 'DIDI RESEARCH AMERICA LLC', 'PONY.AI, INC.', 'DEEPROUTE.AI', 'VALEO NORTH AMERICA INC.', 'AURORA OPERATIONS, INC.', 'WAYMO LLC', 'EASYMILE', 'CRUISE LLC', 'QUALCOMM TECHNOLOGIES, INC.', 'QCRAFT INC.'}
 print(f"{len(makers)}") # 25
 print(f"{disengagements=}") # {'Operator', 'AV System - Emergency Stop', 'Test Drive', 'Test Driver - Soft Stop', 'Driver', 'Software', 'Test Driver', 'AV System'}
@@ -45,6 +45,11 @@ print(f"{auto=}")
 print(f"{driver=}")
 print(data['VEHICLE IS CAPABLE OF OPERATING WITHOUT A DRIVER\n(Yes or No)'].sort_values().tail(100))
 
+# with open("/Users/22staples/PycharmProjects/HALSummer22/disengagement/causes.txt", 'w') as file:
+#     print(descriptions)
+#     for cause in descriptions:
+#         file.write(cause)
+#         file.write('\n')
 
 ### ----- format ----- ###
 '''
@@ -55,6 +60,7 @@ Data Types:
 - driver: boolean - 1/0 (data irrelevant because output always yes)
 - disengagement: boolean - 1/0 **(output)**
 - location: categorical - potential slight numeric by speed
+- description: categorical
 '''
 
 # one hot encoding of manufactures # todo: unit test
@@ -69,10 +75,10 @@ def one_hot_encode(values):
 
 
 manu_encoding = one_hot_encode(data["Manufacturer"].values)
-## todo: figure out dates. (what is sgo align)
+## dates
 # base: datetime64 = pd.Timestamp.year
 base = np.datetime64("2020-01-01")
-date_encoding = [pd.to_timedelta(time - base).days for time in data["DATE"].values]  ## FIXME - contact missy about this
+date_encoding = [pd.to_timedelta(time - base).months for time in data["DATE"].values]
 
 ## location encoding
 # note: rural road is nowhere in the dataset
@@ -87,12 +93,15 @@ auto_encoding = [0 if "no" == datum.lower() else 1 for datum in data['VEHICLE IS
 # comp: AV System - Emergency Stop, AV System, Software
 output = [1 if "AV" in datum or datum == "Software" else 0 for datum in data["DISENGAGEMENT INITIATED BY\n(AV System, Test Driver, Remote Operator, or Passenger)"].values]
 
+## cause
+cause_encoding = one_hot_encode(data["DESCRIPTION OF FACTS CAUSING DISENGAGEMENT"].values)
 # store formatted data
 storage = pds.DataFrame()
-for i in range(len(makers)): storage[makers[i]] = manu_encoding[i]  # manufacturer
+for i in range(len(manu_encoding)): storage[makers[i]] = manu_encoding[i]  # manufacturer
 storage['date'] = date_encoding  # days after 2020
 storage["road"] = location_encoding
 storage["auto capable"] = auto_encoding
+# for i in range(len(cause_encoding)): storage[f"C{i}"] = cause_encoding[i]  # cause
 storage["output"] = output
 
 storage.to_excel("disengagement/encoded.xlsx", index=False)

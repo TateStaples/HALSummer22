@@ -10,11 +10,12 @@ print(input.shape)
 print(output.shape)
 print(output.sum()/output.size)
 
-tree = DecisionTreeClassifier(criterion="gini", max_depth=10, min_samples_split=5, min_samples_leaf=5)
+tree = DecisionTreeClassifier(criterion="gini", max_depth=8)
 tree.fit(input, output)
 
 # show
-feature_names = "AURORA", "WERIDE", "QCRAFT", "DEEPROUTE", "QUALCOMM", "AUTOX", "TOYOTA", "UDELV", "ARGO", "VALEO", "DIDI", "APOLLO", "MERCEDES", "CRUISE","WAYMO","GATIK","LYFT","APPLE","NISSAN","AIMOTIVE","ZOOX","EASYMILE","NURO","PONY","NVIDIA","date", "loc","auto capable"
+
+feature_names = [str(col).split()[0] for col in data.columns][:-1]
 print(len(feature_names))
 plot_tree(tree, label="root", filled=True, feature_names=feature_names, class_names=("human", "av"), impurity=False, fontsize=5)
 plt.show()
