@@ -1,5 +1,8 @@
+# takes the originally supplied files and reformat some of dates to be readable by the code
+
 import pandas as pds
 
+# read the original file
 data: pds.DataFrame = pds.read_excel("/Users/22staples/PycharmProjects/HALSummer22/data/2021 CA disengagement.xlsx", sheet_name=0)
 
 manu = data["Manufacturer"].values
