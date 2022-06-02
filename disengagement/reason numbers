@@ -3,11 +3,7 @@
 3. Perception error of commission (mistake in lane identification, sees something that is not there)
 4. Perception error of omission (fails to see something)
 5. Outside of ODD
-6. Trajectory anomaly, i.e., deviation from planned motion profile or path cause disengagement, failed yield, failed merge
+6. Trajectory/positioning / localization anomaly, i.e., deviation from planned motion profile or path cause disengagement, failed yield, failed merge
 7. Software failure (bug, data recorder)
 8. Unexpected actuation: phantom braking, uncommanded control input
-9. Prediction
-10. Issues with positioning / localization
-11. eStop
-12. Precautionary
-13. Unstated: no details on cause. Just notes the conditions
+9. PRECAUTIONARY/UNSTATED…..OFTEN PRECAUTIONARY EVENTS HAVE A REASON SO ONLY USE THIS CATEGORY IF YOU REALLY NEED TO.
