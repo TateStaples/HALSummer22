@@ -60,7 +60,7 @@ manu_encoding = one_hot_encode(data["Manufacturer"].values)
 
 ## dates
 base = np.datetime64("2020-01-01")
-date_encoding = [pds.to_timedelta(time - base).months for time in data["DATE"].values]
+date_encoding = [pds.to_timedelta(time - base).days / 30 for time in data["DATE"].values]
 
 ## location encoding
 # note: rural road is nowhere in the dataset
@@ -73,8 +73,38 @@ auto_encoding = [0 if "no" == datum.lower() else 1 for datum in data['VEHICLE IS
 ## output - operator/comp
 output = [1 if "AV" in datum or datum == "Software" else 0 for datum in data["DISENGAGEMENT INITIATED BY\n(AV System, Test Driver, Remote Operator, or Passenger)"].values]
 
-## cause #todo: replace this with the 10 categories from
-cause_encoding = one_hot_encode(data["DESCRIPTION OF FACTS CAUSING DISENGAGEMENT"].values)
+## cause
+condensed = [
+    "Unexpected/unanticipated behavior of other cars",
+    "Hardware failure",
+    "Perception error of commission",
+    "Perception error of omission",
+    "Outside of ODD",
+    "Trajectory anomaly",
+    "Software failure",
+    "Unexpected actuation",
+    "Prediction",
+    "positioning",
+    "eStop",
+    "Precautionary",
+    "Unstated"
+]
+def condesed_causes(causes):
+    """
+    Converts the 340 descriptions in column I into the 14 unique categories
+    :param causes: the I column long desciptions
+    :return: condensed cause ids
+    """
+    map = dict()
+    with open("disengagement/causes.txt", 'r') as file:
+        for line in file:
+            id, description = line.split(' - ', 1)
+            map[description.strip()] = int(id.strip("?"))
+    return [map[c.strip().replace("\n", " ")] for c in causes]
+new_causes = condesed_causes(data["DESCRIPTION OF FACTS CAUSING DISENGAGEMENT"].values)
+print(set(new_causes))
+cause_encoding = one_hot_encode(new_causes)
+print(len(cause_encoding))
 
 
 # store formatted data into the recording
@@ -83,6 +113,7 @@ for i in range(len(manu_encoding)): storage[makers[i]] = manu_encoding[i]  # man
 storage['date'] = date_encoding  # days after 2020
 storage["road"] = location_encoding
 storage["auto capable"] = auto_encoding
+for i in range(len(cause_encoding)): storage[condensed[i]] = cause_encoding[i]
 storage["output"] = output
 
 storage.to_excel("disengagement/encoded.xlsx", index=False)
