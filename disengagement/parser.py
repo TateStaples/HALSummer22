@@ -9,7 +9,7 @@ import numpy as np
 from excel_cleaner import condensed
 
 
-data: pds.DataFrame = pds.read_excel("data/clean 2021 CA disengagement.xlsx", sheet_name=0, parse_dates=["DATE"])
+data: pds.DataFrame = pds.read_excel("/Users/22staples/PycharmProjects/HALSummer22/data/clean 2021 CA disengagement.xlsx", sheet_name=0, parse_dates=["DATE"])
 makers = list(set(data["Manufacturer"]))
 
 
@@ -77,14 +77,13 @@ output = [1 if "AV" in datum or datum == "Software" else 0 for datum in data["DI
 ## cause
 cause_encoding = one_hot_encode(data["condensed"].values)
 
-
-# store formatted data into the recording
-storage = pds.DataFrame()
-for i in range(len(manu_encoding)): storage[makers[i]] = manu_encoding[i]  # manufacturer
-storage['date'] = date_encoding  # days after 2020
-storage["road"] = location_encoding
-storage["auto capable"] = auto_encoding
-for i in range(len(cause_encoding)): storage[condensed[i]] = cause_encoding[i]
-storage["output"] = output
-
-storage.to_excel("disengagement/encoded.xlsx", index=False)
+if __name__ == '__main__':
+    # store formatted data into the recording
+    storage = pds.DataFrame()
+    for i in range(len(manu_encoding)): storage[makers[i]] = manu_encoding[i]  # manufacturer
+    storage['date'] = date_encoding  # days after 2020
+    storage["road"] = location_encoding
+    storage["auto capable"] = auto_encoding
+    for i in range(len(cause_encoding)): storage[condensed[i]] = cause_encoding[i]
+    storage["output"] = output
+    storage.to_excel("disengagement/encoded.xlsx", index=False)
