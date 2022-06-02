@@ -1,5 +1,5 @@
 4 - Disengage for a unwanted maneuver of the vehicle going into the construction zone (unwanted behavior for the perception failed on traffic cones).
-9 - Prediction discrepancy; incorrect trajectory estimation of vehicle while making a lane change maneuver
+6 - Prediction discrepancy; incorrect trajectory estimation of vehicle while making a lane change maneuver
 3 - Object Perception: Incorrectly perceived offroad object leads to unwanted braking
 6 - AV did not sufficiently slow for a rapidly braking lead vehicle on a highway, with heavy surrounding traffic, in clear weather.
 5 - Weather(Sunny): Functionnal, construction zone, outside of ODD
@@ -7,17 +7,17 @@
 2 - Weather(Sunny): Camera loss, takeover to pull over and restart the camera, sensor failure
 4 - Disengage for a perception discrepancy for which a component of the vehicle’s perception system failed to detect an object correctly
 3 - Disengagement for a perception discrepancy which impacted the vehicle to react and make unwanted maneuver in traffic.
-13 - During an exit/merge the test vehicle was going the "correct" speed as posted by road signs, but was going too slow or too fast given the traffic and road conditions. Conditions: Non-inclement weather, dry roads, no other factors involved
+6 - During an exit/merge the test vehicle was going the "correct" speed as posted by road signs, but was going too slow or too fast given the traffic and road conditions. Conditions: Non-inclement weather, dry roads, no other factors involved
 4 - Weather(Sunny): Right turn at traffic light (oncoming vehicle from the left seen lately by the perception) , perception issue
 4 - Autonomous vehicle did not recognize traffic light accurately and stopped at a junction with green light. The safety driver took over the vehicle to avoid blocking the vehicle behind.
 2 - Weather(Sunny): Front camera temporary loss, hardware issue
 7 - Disengage for a software discrepancy for which our vehicle's diagnostics received a message indicating a potential performance issue with a software component
-13 - Weather(Sunny): Controls disengaged due to requesting deceleration above threshold (part of our safety concept)
+6 - Weather(Sunny): Controls disengaged due to requesting deceleration above threshold (part of our safety concept)
 4 - Object Perception: Late perception of occluded vehicle leads to unwanted planner trajectory
 4 - Weather(Sunny): The vehicle moving irregularly with in the lane due to oscillations in lateral control due to poor lane detection by front camera, No unusual conditions were observed
 6 - Test driver precautionary disengaged to avoid coming too close to the car in front.
-9 - Incorrect prediction of vehicle caused undesirable motion plan
-10 - Software Positioning: Map not providing enough information for precise positioning
+6 - Incorrect prediction of vehicle caused undesirable motion plan
+6 - Software Positioning: Map not providing enough information for precise positioning
 6 - Test driver disengaged due to planning system choosing a deceleration too aggressive given traffic conditions.
 8 - Weather(Sunny): The vehicle shifting in it's lateral movement at the exits on the highway but then adjusting to its original course, No unusual conditions were observed
 5 - Planning; as a precaution, the safety operator intervened to avoid a cyclist traveling directly at the ADV at a high-speed.
@@ -30,30 +30,30 @@
 1 - Test driver precautionary disengaged to avoid vehilce that was attempting to cross into ego lane.
 6 - Test driver precautionary disengaged due to going too close next to adjacent cars.
 7 - System software failure in the planner module while proceeding straight with surrounding traffic on highway, in clear weather.
-10 - Driver disengagement due to positioning  discrepancy resulting in undesired lateral movement in the lane
-10 - Map discrepancy led to undesirable motion plan
+6 - Driver disengagement due to positioning  discrepancy resulting in undesired lateral movement in the lane
+6 - Map discrepancy led to undesirable motion plan
 4 - Weather(Cloudy): Driver's decision to takeover because pedestrian detection at pedestrian crossing was erratic, driver safety decision
 4 - Camera vision impeded by sun. Vehicle not in an active construction zone. No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area.
-12 - Weather(Cloudy): Driver's decision to takeover because a bicycle was crossing the road in an intersection (safety  decision)
+9 - Weather(Cloudy): Driver's decision to takeover because a bicycle was crossing the road in an intersection (safety  decision)
 5 - Weather(Sunny): Driver's safety decision to takeover because too much congested at right turn to traffic light, outside of ODD
 4 - Precautionary takeover to address perception; yielding to obscured vehicle
 4 - Weather(Cloudy): Stopped at a stop intersection, disruption in the stop strategy due to an anomly in the distance to stop lane management (take over to pass the stop), perception issue
-9 - Prediction discrepancy; incorrect trajectory estimation of vehicle making an insufficiently wide turn
-10 - Gps localization is incorrect, lane off-set to large, AV was driving towards edge of the lane. As a result, the driver safely disengaged and resumed manual control.
+6 - Prediction discrepancy; incorrect trajectory estimation of vehicle making an insufficiently wide turn
+6 - Gps localization is incorrect, lane off-set to large, AV was driving towards edge of the lane. As a result, the driver safely disengaged and resumed manual control.
 6 - Speed control Software module generated a wrong speed control command. As a result, the driver safely disengaged and resumed manual control.
 6 - Driver disengagement due to planning discrepancy: failure to yield to merging vehicle
 4 - Weather(Sunny): Traffic light stayed at red color when it was green, perception issue with front camera
 6 - Exit/Merge Lane departure, due to the car missing the lane Conditions: Non-inclement weather, dry roads, no other factors involved
 1 - Test driver precautionary disengaged for a truck getting too close during lane merge.
 2 - Hardware Irregularity: Bad signal received from Global Positioning System device on main computer
-9 - Driver disengagement due to safety monitor notification of planning discrepancy in the determination of vehicle trajectory
+6 - Driver disengagement due to safety monitor notification of planning discrepancy in the determination of vehicle trajectory
 4 - Daytime, clear weather, normal street traffic.  Perception issue: a trash can sitting on the right edge of the vehicle's travel lane was not detected by the software processing the sensor data stream.
 4 - Reduced visibility of a vehicle due to occlusions resulted in an undesirable motion plan
 2 - A middlware component was offline, leading to the system disengagement. The system asked the operator to take control of the vehicle.
 4 - Weather(Sunny): The vehicle was moving irregularly within the lane due to oscillations in lateral control caused by poor lane detection by front camera near US-101 Freeway near Palo Alto, No unusual conditions were observed
 6 - Safety Driver disengaged autonomous mode upon judging that vehicle was too close to other road user or obstacle.
 4 - Precautionary takeover to address perception; lane keeping
-13 - Invalid control unit operation. Vehicle not in an active construction zone. No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area.
+5 - Invalid control unit operation. Vehicle not in an active construction zone. No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area.
 5 - The operator disengaged the system manually to remain in the operational design domain. This was accomplished by pressing the brake pedal to reduce the velocity of the vehicle.
 6 - Weather(Cloudy): System disengaged because braking too hard on a red traffic light that switched lately to red color (part of the safey concept, when pushing too hard the brake pedal, system gave back the control)
 1 - Weather(Sunny): Precautionary disengagement in response to a erratically pedestrian crossing, driver safety decision
@@ -61,13 +61,13 @@
 1 - Weather(Sunny): Reckless driver didn't respect the order at stop intersection, driver's safety decision
 4 - Traffic Light Software Module stopped detecting traffic light and AV started go on a red light. As a result, the driver safely disengaged and resumed manual control.
 4 - Weather(Sunny): Driver's safety decision to takeover due to the potential lately non detection on a Pedestrian that intented to cross, driver's seqfety decision
-12 - Weather(Cloudy): Driver's decision to takeover because at stop intersection because of pedestrians crossing the street (safety decision)
+9 - Weather(Cloudy): Driver's decision to takeover because at stop intersection because of pedestrians crossing the street (safety decision)
 6 - Planning Logic: Planner trajectory inadequately yields for vehicle reversing out of driveway
-9 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning based on detection of a parked vehicle
+6 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning based on detection of a parked vehicle
 7 - Weather(Cloudy): Driver's decision to takeover because collisions wrongly computed between vehicles at stop intersection
 6 - Driver disengagement due to safety monitor notification of planning discrepancy in the planning of lane change
-9 - Planning discrepancy; system planned incorrect trajectory based on a pedestrian making an illegal crossing
-12 - Weather(Sunny): Driver's safety decision during left turn at stop intersection to let the oncoming vehicle pass first, driver's safety decision
+6 - Planning discrepancy; system planned incorrect trajectory based on a pedestrian making an illegal crossing
+9 - Weather(Sunny): Driver's safety decision during left turn at stop intersection to let the oncoming vehicle pass first, driver's safety decision
 6 - Disengage for unwanted maneuver of the vehicle that was undesirable under the circumstances
 3 - Driver disengagement due to perception discrepancy causing false positive vehicle detection
 5 - Weather(Sunny): Precautionary disengagement in response to the autonomous vehicle as the vehicle might have ran into the concrete barriers due to no visible lanes, outside of ODD
@@ -89,22 +89,22 @@
 5 - The operator disengaged the system manually to remain in the operational design domain. This was achieved by pressing the accelerator pedal to increase velocity of the vehicle. This was accomplished by pressing the brake pedal to reduce the velocity of the vehicle. An issue with motion control system caused the system to disengage. The system asked the operator to take control of the vehicle.
 1 - Planning; as a precaution, the safety operator intervened for a vehicle that, without warning, made a u-turn from the middle lane.
 1 - Precautionary disengagement in response to other road user's non-compliant behavior*
-9 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning for a vehicle cutting into lane of traffic.
-12 - Weather(Rainy): Driver's decision: inhibition of lane change maneuvre because  the road user on the target lane was too close, safety decision
+6 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning for a vehicle cutting into lane of traffic.
+6 - Weather(Rainy): Driver's decision: inhibition of lane change maneuvre because  the road user on the target lane was too close, safety decision
 5 - Weather(Sunny): Driver's safety decision to takeover because the front car was parked too close from us at the right of the ego lane, outside of ODD
-12 - Planning; as a precaution, the safety operator intervened to create space between the ADV and a truck making a narrow left turn from the far right lane of traffic.
-12 - Weather(Sunny): Driver's safety decision to takeover because the front car was parked too close from us at the right of the ego lane
+6 - Planning; as a precaution, the safety operator intervened to create space between the ADV and a truck making a narrow left turn from the far right lane of traffic.
+9 - Weather(Sunny): Driver's safety decision to takeover because the front car was parked too close from us at the right of the ego lane
 6 - Safety Driver disengaged autonomous mode upon judging that vehicle was too close to road boundary.
-12 - Weather(Sunny): Driver's safety decision to takeover because the traffic was blocked in the middle of an intersection, driver's safety decision
+9 - Weather(Sunny): Driver's safety decision to takeover because the traffic was blocked in the middle of an intersection, driver's safety decision
 5 - Weather(Sunny): The vehicle moving irregularly due to poor/bad lane detections where white lane mark background is painted in black color and traces of old lane markings still present on US-101 Freeway,  This is in ODD of vehicle however two sets of lane markings with lateral offset caused oscillations
 4 - Weather(Sunny): Traffic light stayed at red color when it was green, perception issue
 6 - Driver precautionary  disengagement due to lead vehicle transitioning to the highway shoulder
 4 - Perception discrepancy; On city road in moderate traffic with light rain during day
-12 - Planning; as a precaution, the safety operator intervened to make space between the ADV and a vehicle turning right.
+9 - Planning; as a precaution, the safety operator intervened to make space between the ADV and a vehicle turning right.
 6 - Safety Driver disengaged autonomous mode near crosswalk due to overly conservative vehicle behavior.
 5 - Driver disengagement due to conditions exceeding ODD
 3 - Object Perception: Incorrectly perceived rain event leads to unwanted braking
-9 - Planning Logic: Prediction about agent merging behind us leads to unwanted braking
+6 - Planning Logic: Prediction about agent merging behind us leads to unwanted braking
 2 - Weather(Sunny): Stop intersection, control disengagment due to brake pedal miscalibration
 2 - Hardware discrepancy or system fault; On city road in light traffic with clear sky during day
 6 - The AV wasn't centered in the lane. As a result, the driver safely disengaged and resumed manual control.
@@ -123,21 +123,21 @@
 1 - Weather(Sunny): Precautionary disengagement in response to the autonomous vehicle due to an object driving close to ego vehicle behind, No unusual conditions were observed
 6 - Driver disengagement due to planning discrepancy causing undesired braking
 2 - Daytime, clear weather, normal street traffic.  A hardware component of the autonomy system faulted, and the system disengaged; no abnormalities with on-road behavior.
-12 - Precautionary takeover to address controls; yielding to cross traffic
+9 - Precautionary takeover to address controls; yielding to cross traffic
 7 - The software gave back control to the driver, due to a minor system error Conditions: Non-inclement weather, dry roads, no other factors involved
 7 - The system disengaged because of an error with the fusion component. The system asked the operator to take control of the vehicle.
 4 - Weather(Cloudy): Driver's decision to takeover because red light at traffic light seen too late, perception issue
-13 - Weather (Cloudy, Light Rain): Controls disegaged during stop at traffic light intersection, unknown cause
+9 - Weather (Cloudy, Light Rain): Controls disegaged during stop at traffic light intersection, unknown cause
 6 - Weather(Cloudy): System disengaged because braking too hard at an unprtected left turn (part of the safey concept, when pushing too hard the brake pedal, system gave back the control)
 5 - Weather(Cloudy): Driver's safety decision to takeover because the front car was parked too close from us at the left of the ego lane, outside of ODD
 6 - Weather(Sunny): The vehicle braked too early when the object is too far from the vehicle, No unusual conditions were observed
 6 - Weather(Sunny): The vehicle was off from the route and getting very close to curb of sidewalk due to no lane markings one side of the road (Saratoga Ave, San Mateo, CA), No unusual conditions were observed
-10 - An issue with localization component caused the system to disengage. The system asked the operator to take control of the vehicle.
-9 - Incorrect prediction of parked vehicle caused undesirable motion plan
+6 - An issue with localization component caused the system to disengage. The system asked the operator to take control of the vehicle.
+6 - Incorrect prediction of parked vehicle caused undesirable motion plan
 1 - Weather(Cloudy): Driver's decision to takeover to consider a reckless driver that passed illegaly before us
 6 - Lane change did not happen in time in an exit/merge situation - therefore disengaged Conditions: Non-inclement weather, dry roads, no other factors involved
 6 - Driver performed steering maneuver because the vehicle didn’t drive on the expected path. Vehicle passing through an active contruction zone No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area.
-12 - Safety Driver disengaged autonomous mode to manually drive past pedestrians near the road.
+9 - Safety Driver disengaged autonomous mode to manually drive past pedestrians near the road.
 3 - Weather(Sunny): The vehicle stopped/braked in the urban street due to pedestrains walking in the other direction on the foot path,  It was raining a bit during this disengagement
 3 - The test vehicle's software recommended an incorrect lane to move into during an upcoming exit on the freeway.  Conditions: Non-inclement weather, dry roads, no other factors involved
 1 - Planning; as a precaution, the safety operator intervened to avoid the ADV colliding with a truck making a narrow double left turn.
@@ -151,58 +151,58 @@
 6 - Test driver disengaged due to planning system choosing a trajectory that is too fast and aggressive.
 1 - Weather(Sunny): Road user was going to undercut test vehicle during right turn, Driver' safety decision
 8 - Weather(Sunny): The vehicle false braked when the object is too far from the vehicle,  No unusual conditions were observed
-9 - Prediction discrepancy; incorrect trajectory estimation of vehicle driving through a junction
-9 - Prediction discrepancy; incorrect trajectory estimation of adjacent vehicle during lane change maneuver
+6 - Prediction discrepancy; incorrect trajectory estimation of vehicle driving through a junction
+6 - Prediction discrepancy; incorrect trajectory estimation of adjacent vehicle during lane change maneuver
 7 - Driver disengagement due to safety monitor notification of general system discrepancy
 3 - Weather(Sunny): Virtual object created because of ghost object at pedestrian crossing, Perception issue
-11 - The software detected an inanimate object in the AV's path and triggered an Estop
-12 - Weather(Cloudy): Driver's decision to takeover during unprotected left turn to let a bicycle pass, driver safety decision
+8 - The software detected an inanimate object in the AV's path and triggered an Estop
+9 - Weather(Cloudy): Driver's decision to takeover during unprotected left turn to let a bicycle pass, driver safety decision
 6 - Test driver disengaged due to planning system choosing a trajectory that is too slow and conservative given traffic conditions.
 4 - Weather(Rainy): Traffic light stayed at red color when it was green, perception issue
 6 - The planner was not able to generate a valid trajectory. The system asked the operator to take control of the vehicle. A valid trajectory could not be generated.
-12 - Test driver precautionary disengaged to avoid metal cart laying on the road.
+9 - Test driver precautionary disengaged to avoid metal cart laying on the road.
 3 - Weather(Cloudy): Ghost pedestrian detected at pedestrian crossing (it was a vertical sign in the middle of the pedestrian crossing)
 5 - Weather(Cloudy): Driver's decision to takeover because side vehicle detected in ego lane, outside of ODD
 8 - Safety Driver disengaged autonomous mode due to inappropriate steering.
 6 - Driver disengagement due to planning discrepancy: failure to execute lane change
 6 - Driver pressed the brake pedal because the vehicle was driving faster than driver expected. Vehicle passing through an active contruction zone No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area.
 6 - Planning Logic: Planner trajectory fails to avoid potential overlap with reversing agent
-12 - Weather(Sunny): Precautionary disengagement at crowdy unrpotected left turn, driver safety decision
+9 - Weather(Sunny): Precautionary disengagement at crowdy unrpotected left turn, driver safety decision
 2 - Weather(Cloudy): Driver's decision to takeover because sensor loss, hardware issue
-9 - Daytime, clear weather, normal street traffic.  Prediction issue: results of models run to predict obstacle behavior differed from on-road outcomes by margin that led to an unsafe or disruptive vehicle trajectory
+6 - Daytime, clear weather, normal street traffic.  Prediction issue: results of models run to predict obstacle behavior differed from on-road outcomes by margin that led to an unsafe or disruptive vehicle trajectory
 5 - Weather(Cloudy): Driver's decision to takeover because the front car was parked in the middle of the ego lane
-12 - Weather(Cloudy): Driver's decision to takeover because at stop intersection because of pedestrians crossing the street, driver's safety decision
+9 - Weather(Cloudy): Driver's decision to takeover because at stop intersection because of pedestrians crossing the street, driver's safety decision
 5 - Weather(Sunny): Vehicle stopped on right turn due to being too close to adjacent on-coming traffic, ouside of ODD
 5 - Weather(Sunny): Construction zone, outside of ODD
-12 - Planning; as a precaution, the safety operator intervened to avoid the ADV merging into an area of heavy traffic.
+9 - Planning; as a precaution, the safety operator intervened to avoid the ADV merging into an area of heavy traffic.
 4 - Driver disengagement due to perception discrepancy in the detection of  truck merging into ego vehicle
 1 - Weather(Sunny): Precautionary disengagement in response to the autonomous vehicle due to very fast traffic in the next lane, No unusual conditions were observed
 6 - Daytime, clear weather, normal street traffic.  Planning issue: The autonomy system was aware of another vehicle that was going to cross its planned travel path (eg at an intersection or unprotected left), but did not appropriately adjust to the path crossing.
-9 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning for vehicle making an insufficiently wide turn
+6 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning for vehicle making an insufficiently wide turn
 4 - Perception discrepancy; On city road in heavy traffic with cloudy sky during dusk
-12 - Weather(Sunny): Unprotected left turn too congested, driver's safety decision
+9 - Weather(Sunny): Unprotected left turn too congested, driver's safety decision
 6 - The car should have stayed in the left lane, but tended to the right lane. Conditions: Non-inclement weather, dry roads, no other factors involved
 4 - Daytime, clear weather, normal street traffic.  Perception issue: a car parked on the right edge of the vehicle's travel lane was not detected by the software processing the sensor data stream.
 4 - Object Perception: Late to perceive animal crossing the road
-9 - Prediction discrepancy; incorrect trajectory estimation based on adjacent vehicle avoiding another vehicle encroaching on its lane
+6 - Prediction discrepancy; incorrect trajectory estimation based on adjacent vehicle avoiding another vehicle encroaching on its lane
 1 - Other road user behaving poorly; lane encroachment
 4 - Weather(Cloudy): Stop intersection: Driver's decision to takeover because a side vehicle was seen too late when it was its turn to go, and no ours
-10 - Driver disengagement due to positioning discrepancy resulting in undesired lateral movement in the lane
+6 - Driver disengagement due to positioning discrepancy resulting in undesired lateral movement in the lane
 6 - Weather(Cloudy): Car disengagement because braking too hard on a red traffic light that switched lately to red color (part of the safey concept, when pushing too hard the brake pedal, system gave back the control)
 6 - Weather(Cloudy): Car disengagement because braking too hard on a parked car (part of the safey concept, when pushing too hard the brake pedal, system gave back the control)
 3 - Test driver disengaged due to perception discrepancy in detection of the left-turn car getting onto ego lane.
 7 - System software failure in the planner module while approaching stop sign on surface street, with no surrounding traffic and in clear weather.
 4 - Weather(Sunny): Car on right not seen by  the sensors at stop intersection, which disrupted the order in the stop strategy, perception issue
 1 - Reckless Agent/Road User; Prediction discrepancy; On city road in heavy traffic with clear sky during day
-13 - Daytime, clear weather, normal street traffic.  Safety driver inadvertently disengaged the autonomy system.
+9 - Daytime, clear weather, normal street traffic.  Safety driver inadvertently disengaged the autonomy system.
 4 - Weather(Sunny): Late detection of pedestrian crossing at crosswalk during left-turn, percetion issue
 1 - Planning discrepancy; system planned incorrect trajectory due to oncoming vehicle illegally cutting into lane of traffic
-10 - Driver disengagement due to safety monitor notification of positioning error
+6 - Driver disengagement due to safety monitor notification of positioning error
 1 - Weather (Cloudy, Light Rain):  Reckless driver went through 4-way stop intersection when it was the test vehicle's turn
 7 - Daytime, clear weather, normal street traffic.  Vehicle drive-by-wire issue: the autonomy software asked for a driving action (steer or throttle/brake command) that the vehicle DBW system could not deliver.
 6 - Safety Driver disengaged autonomous mode due to cut-in issue.
 5 - Driver disengagement due to conditions exceeding ODD
-12 - Weather(Sunny): Precautionary disengagement in response to the autonomous vehicle merging into oncoming traffic, No unusual conditions were observed
+9 - Weather(Sunny): Precautionary disengagement in response to the autonomous vehicle merging into oncoming traffic, No unusual conditions were observed
 4 - Daytime, clear weather, normal street traffic.  Perception issue: a roll of carpet lying across the vehicle's travel lane was not detected by the software processing the sensor data stream.
 6 - Planning Logic: Planned trajectory inadequately yields for vehicle reversing out of driveway
 5 - Weather(Sunny): Precautionary disengagement in response to the autonomous vehicle as the vehicle might have ran into the construction zone orange cones due to no visible lanes, outside of ODD
@@ -211,24 +211,24 @@
 4 - Daytime, clear weather, normal street traffic.  Perception issue: black & orange Road Work sign sitting in the middle of the vehicle's travel lane was not detected by the software processing the sensor data stream.
 1 - Prediction discrepancy; incorrect trajectory estimation of vehicle making a illegal maneuver preceding straight from a left turn only lane
 6 - Planning; as a precaution, the safety operator intervened for the ADV insufficiently yielding to a vehicle traveling straight while the AV was waiting to make a left turn.
-9 - Planning Logic: Incorrect behavior prediction for merging bicyclist results in unwanted braking
+6 - Planning Logic: Incorrect behavior prediction for merging bicyclist results in unwanted braking
 1 - Planning; as a precaution, the safety operator intervened to make space between the ADV, which was going to make a left turn, and a vehicle traveling straight through the intersection at high-speed.
 6 - Planning discrepancy; system planned incorrect trajectory based on position of adjacent vehicle
 6 - An issue with planner component caused the system to disengage. The system asked the operator to take control of the vehicle.
 1 - Weather(Sunny): Precautionary disengagement in response to a bike cutting in on our lane, driver safety decision
 3 - Weather(Sunny): Yield post in middle of crosswalk detected as pedestrian, perception issue
 6 - The planner was not able to generate a valid trajectory within a time cycle. The system asked the operator to take control of the vehicle.
-9 - Planning Logic: Incorrect behavior prediction for oncoming vehicle results in unwanted braking
+6 - Planning Logic: Incorrect behavior prediction for oncoming vehicle results in unwanted braking
 6 - Motion planning unable to produce valid trajectory
-10 - System sofware failure in the planner module at a specific surface street location, with stopped traffic ahead, related to a mapping issue. The weather was clear.
+6 - System sofware failure in the planner module at a specific surface street location, with stopped traffic ahead, related to a mapping issue. The weather was clear.
 6 - Safety Driver disengaged autonomous mode due to issue with lane change maneuver.
 4 - Test driver disengaged due to perception desrepancy in detection of a box truck.
 5 - Driver disengagement due to conditions exceeding ODD
 1 - Planning; as a precaution, the safety operator intervened as a vehicle did not follow the appropriate traffic procedures and proceeded straight from the ADV's left while the ADV was making a right turn.
 7 - Software System Kickout:  The vehicle's wire control system did not receive vehicle info from the Controller Area Network
-9 - Planning Logic: Incorrect behavior prediction for cyclist leads to unwanted braking
-9 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning for a vehicle cutting into lane of traffic
-9 - Incorrect prediction led to undesirable motion plan
+6 - Planning Logic: Incorrect behavior prediction for cyclist leads to unwanted braking
+6 - Planning and Prediction discrepancy; incorrect trajectory estimation of and planning for a vehicle cutting into lane of traffic
+6 - Incorrect prediction led to undesirable motion plan
 4 - Test driver disengaged due to perception desrepancy in detection of stopped traffic in front.
 6 - Planning Logic: Planner trajectory inadequately yields for vehicle reversing out of garage
 6 - Undesirable motion plan resulted in incorrect vehicle position on roadway
@@ -238,7 +238,7 @@
 7 - A system software failure in the planner module during lane change, with surrounding traffic, on a highway in clear weather.
 6 - Weather(Sunny): Controls disengaged at unrpotected left turn due to requesting deceleration above threshold, internal safety concept rules
 6 - Motion/Behaviour planning discrepancy; On city road in heavy traffic with cloudy sky during night
-9 - Disengage for incorrect behavior prediction of other traffic participants
+6 - Disengage for incorrect behavior prediction of other traffic participants
 4 - Incorrect perception led to undesirable motion plan
 6 - Driver disengagement due to planning discrepancy: failure to execute mandatory lane change
 6 - The test vehicle's software recommended an incorrect lane change to the software operator.  Conditions: Non-inclement weather, dry roads, no other factors involved
@@ -248,14 +248,14 @@
 6 - Weather(Sunny): Controls disengaged at traffic light due to requesting deceleration above threshold, internal safety concept rules
 1 - Planning; as a precaution, the safety operator intervened to avoid being rear-ended by the vehicle traveling behind the ADV.
 6 - Disengage for unwanted maneuver of the vehicle caused by a planning discrepancy while generating an appropriate trajectory
-10 - Ego drifting towards curb due to degrading localization
+6 - Ego drifting towards curb due to degrading localization
 7 - Weather(Sunny): Lateral control oversteered due to new curve speed limit software, finetuning required
 5 - Weather(Sunny): Road user maneuvering to park inside ego lane too close from in our current lane, outside of ODD
 6 - Motion/Behaviour planning discrepancy; On city road in heavy traffic with cloudy sky during day
 6 - Discrepancy in planning around vehicle making aggressive cut through in front of ego car
 5 - Weather(Cloudy): Driver's decision to let a vehicle out of its parking spot, outside of ODD
 6 - Precautionary takeover to address planning; lane keeping
-9 - Prediction discrepancy; incorrect trajectory estimation of adjacent vehicle making an insufficiently wide right turn
+6 - Prediction discrepancy; incorrect trajectory estimation of adjacent vehicle making an insufficiently wide right turn
 5 - Weather(Sunny): Needed to give emergency vehicle right-of-way, outside of ODD
 6 - Safety Driver disengaged autonomous mode due to inappropriate braking proposal.
 6 - Driver pressed the brake pedal because the vehicle was driving faster than driver expected. Vehicle not in an active construction zone. No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area.
@@ -267,21 +267,21 @@
 5 - Weather(Cloudy): Driver's safety decision to takeover because the front car was parked too close from us at the right of the ego lane, outise of ODD
 6 - During a merge, the test vehicle failed to keep an appropriate distance between a merging car or the merging car failed to yield to us.  Conditions: Non-inclement weather, dry roads, no other factors involved
 4 - Test driver disengaged due to perception desrepancy in detection of an opened box truck.
-12 - Weather(Sunny): Precautionary disengagement in response to a really close parked vehicle, driver' safety decision
+9 - Weather(Sunny): Precautionary disengagement in response to a really close parked vehicle, driver' safety decision
 4 - Weather(Cloudy): Car hidden from the sensors field of view at stop intersection, which disrupted the order in the stop strategy (take over to let the hidden vehicle pass first), perception issue
 7 - Weather(Sunny): Car didn't restart when there was nothing to stop it to. (control issue) , unknown cause
 5 - The operator disengaged the system manually to remain in the operational design domain. This was achieved by pressing the accelerator pedal to increase velocity of the vehicle. This was accomplished by pressing the brake pedal to reduce the velocity of the vehicle.
 6 - Weather(Cloudy): Driver's decision to takeover because too much high speed during a turn, control issue
 1 - Prediction discrepancy; incorrect trajectory estimation of adjacent vehicle which attempted an illegal lane change
-11 - A collision hazard in the environment ahead was detected by the software, which triggered an Estop
+8 - A collision hazard in the environment ahead was detected by the software, which triggered an Estop
 6 - Precautionary Takeover: Oncoming traffic occupied the current planned path therefor takeover was initiated
 3 - The Test Driver saw an inanimate obstacle ahead and preemtively triggered a soft stop
 4 - Weather(Sunny): The vehicle moving irregularly due to poor/bad lane detections where white lane mark background is painted in black color on US-101 Freeway,  No unusual conditions were observed
 6 - Weather(Cloudy): Driver's decision to takeover because too close to a parked object
-10 - Driver disengagement due to safety monitor notification of positioning discrepancy compared to ground truth positioning system
+6 - Driver disengagement due to safety monitor notification of positioning discrepancy compared to ground truth positioning system
 2 - Disengage for a hardware discrepancy for which our vehicle's diagnostics received a message indicating a potential performance issue with a hardware component of the self-driving system or a component of the base vehicle
-12 - During the lane change maneuvre a truck on the right lane wanted to make lane change into our lane Conditions: Non-inclement weather, dry roads, no other factors involved
-9 - Prediction discrepancy; incorrect trajectory estimation of vehicle entering into traffic junction
+9 - During the lane change maneuvre a truck on the right lane wanted to make lane change into our lane Conditions: Non-inclement weather, dry roads, no other factors involved
+6 - Prediction discrepancy; incorrect trajectory estimation of vehicle entering into traffic junction
 5 - Weather(Sunny): The vehicle stopped/braked in the urban street due to parked cars along the sides of the road as this autonomous vehicle is designed for highway driving only, No unusual conditions were observed
 5 - The operator disengaged the system manually to remain in the operational design domain. The driver performed a steering manouver to correct the trajectory of the vehicle.
 4 - Weather(Sunny): The vehicle moving irregularly due to poor/bad lane detections where white lane mark background is painted in black color and traces of old lane markings still present on US-101 Freeway,  No unusual conditions were observed
@@ -298,7 +298,7 @@
 6 - The AV attempted to go around a vehicle stopped at a Red light. As a result, the driver safely disengaged and resumend manual control.
 6 - Planning discrepancy; system planned incorrect yield at intersection due to an oncoming vehicle during right turn maneuver.
 6 - Safety Driver disengaged autonomous mode to re-center vehicle in lane.
-9 - Precautionary takeover to address prediction; yielding to stopped vehicle
+6 - Precautionary takeover to address prediction; yielding to stopped vehicle
 7 - A general error caused the system to stop the engaged status. Vehicle not in an active construction zone. No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area.
 6 - Precautionary takeover to address planning; yielding to cross traffic
 7 - An issue with environment model caused the system to disengage. The system asked the operator to take control of the vehicle.
@@ -309,7 +309,7 @@
 6 - During the lane change maneuver the test vehicle was going the "correct" speed as posted by road signs, but was going too slow or too fast given the traffic and road conditions. Conditions: Non-inclement weather, dry roads, no other factors involved
 5 - Weather(Sunny): Car double parked, outside of ODD
 7 - Hardware diagnostic caused software kickout
-9 - Planning Logic: Incorrect behavior prediction for offroad pedestrian results in unwanted braking
+6 - Planning Logic: Incorrect behavior prediction for offroad pedestrian results in unwanted braking
 3 - Weather (Cloudy, Light Rain):  Pedestrian crossing post detected in center of roadway, perception issue
 1 - Prediction; as a precaution, the safety operator intervened as a vehicle did not follow the appropriate traffic procedures and proceeded straight from a right turn only lane at T-section.
 6 - Weather(Sunny): Controls disengaged at pedestrian crossing due to requesting deceleration above threshold, internal safety concept rules

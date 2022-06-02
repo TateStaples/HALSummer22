@@ -12,8 +12,9 @@ output: np.array = np.array(data["output"].values.tolist())
 input: np.array = np.array(data.values.tolist())[:, :-1]
 
 # create adn fit the tree
-tree = DecisionTreeClassifier(criterion="gini", max_depth=8)
+tree = DecisionTreeClassifier(criterion="gini", max_depth=5)
 tree.fit(input, output)
+tree.tree_.children_left
 
 # output the results
 feature_names = [str(col).split()[0] for col in data.columns][:-1]

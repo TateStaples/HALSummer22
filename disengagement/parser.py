@@ -75,19 +75,15 @@ output = [1 if "AV" in datum or datum == "Software" else 0 for datum in data["DI
 
 ## cause
 condensed = [
-    "Unexpected/unanticipated behavior of other cars",
+    "Unanticipated behavior of other cars",
     "Hardware failure",
-    "Perception error of commission",
-    "Perception error of omission",
-    "Outside of ODD",
+    "Commission (perception error)",
+    "Omission (perception error)",
+    "ODD",
     "Trajectory anomaly",
     "Software failure",
     "Unexpected actuation",
-    "Prediction",
-    "positioning",
-    "eStop",
-    "Precautionary",
-    "Unstated"
+    "Precautionary"
 ]
 def condesed_causes(causes):
     """
