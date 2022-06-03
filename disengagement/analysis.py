@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import parser
 
 
-# thing for making graphs to search for outliers
+# thing for making graphs to search for outliers and make category bar charts
 # no missing data
 
 """
@@ -17,6 +17,9 @@ overall ratios
 
 
 class Incident:
+    """
+    Stores all info from row in spreadsheet
+    """
     _all = list()
 
     def __init__(self, row: tuple):
@@ -26,10 +29,31 @@ class Incident:
 
     @staticmethod
     def matching(predicate):
+        """
+        Allow for filtering through the incidents
+        :param predicate: lambda function that takes an incident and returns true/false on whether it should be return
+        :return: list of values matching values
+        """
         return list(filter(predicate, Incident._all))
 
 
-def freq_bar(x_categories: list, y_categories: list, x_label:str, y_label:str, proportion=False):
+# sorts bar data based of different categories
+def sort_largest(categories, matches, totals):return list(zip(*sorted(list(zip(categories, matches, totals)), key=lambda tup: tup[2])))  # sorts most samples to least
+def sort_matches(categories, matches, totals):return list(zip(*sorted(list(zip(categories, matches, totals)), key=lambda tup: tup[1])))  # sorts by most av disengage
+def sort_alphabetical(categories, matches, totals): return list(zip(*sorted(list(zip(categories, matches, totals)), key=lambda tup: tup[0])))  # sorts by category name
+def sort_month(categories, matches, totals):return list(zip(*sorted(list(zip(categories, matches, totals)),key=lambda tup: int(tup[0][-2:]), reverse=True)))  # sorts month
+
+
+def two_var_bar(x_categories: list, y_categories: list, x_label:str, y_label:str, proportion=False):
+    """
+    Creates stacked bar chart for how often each y happens for each x
+    :param x_categories: the list of categories on x-axis
+    :param y_categories: the sub categories to show in each bar chart
+    :param x_label: what to label the x-axis
+    :param y_label: what to label the y-axis
+    :param proportion: False-> chart # of occurrence, True->chart % of occurrence
+    :return:
+    """
     fig, ax = plt.subplots()
     unique_x = list(set(x_categories))
     unique_y = list(set(y_categories))
@@ -46,15 +70,25 @@ def freq_bar(x_categories: list, y_categories: list, x_label:str, y_label:str, p
     small_label = [s[:4] for s in unique_x]
     for i, y_ in enumerate(unique_y):
         if proportion:
-            ax.bar(small_label, [m/t for m, t in zip(matches[i], totals)], label=y_)
+            ax.barh(small_label, [m/t for m, t in zip(matches[i], totals)], label=y_)
         else:
-            ax.bar(small_label, matches[i], label=y_)
+            ax.barh(small_label, matches[i], label=y_)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.show()
 
 
-def bar(x, sucess, x_label:str, y_label:str, proportion=False):
+def bar(title: str, x, sucess, sorter=sort_largest, proportion=False):
+    """
+    Creates a bar chart of how often category
+    :param title:
+    :param x: list of categorical variable
+    :param sucess: list paired with x if that datum was cancelled by the av (bool_
+    :param sorter: method for sorting the bars. Defaults to sorting by # of occurences
+    :param proportion: True->chart % av disengage, False->chart # of av disengage
+    :return:
+    """
+    fig, ax = plt.subplots()
     uniques = list(set(x))
     matches = [0] * len(uniques)
     totals = [0] * len(uniques)
@@ -63,34 +97,50 @@ def bar(x, sucess, x_label:str, y_label:str, proportion=False):
         if s_:
             matches[i] += 1
         totals[i] += 1
-    print(matches)
-    print(totals)
-    small_label = [s[:5] for s in uniques]
+    small_label = [s.split()[0][:8] for s in uniques]
     heights = [m/t for m, t in zip(matches, totals)]  if proportion else matches
-
-    if len(small_label) > 15:
-        sorted_labels = sorted(small_label, key=lambda x: heights[small_label.index(x)], reverse=True)[:10]
-        sorted_h = sorted(heights, reverse=True)[:10]
-        plt.bar(sorted_labels, sorted_h, width=0.5)
-    else:
-        plt.bar(small_label, heights, width=0.5)
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
+    s_labels, s_matches, s_totals = sorter(small_label, heights, totals)
+    if not proportion:
+        bar2 = ax.barh(s_labels, [t-m for m, t in zip(s_matches, s_totals)], label="human")
+    bars = ax.barh(s_labels, s_matches, label="av")
+    if proportion:
+        ax.bar_label(bars, labels=[f"{round(x*100, 2)}%" for x in s_matches])
+    ax.legend()
+    plt.title(title)
     plt.show()
 
-
-data: pds.DataFrame = parser.data#pds.read_excel("/Users/22staples/PycharmProjects/HALSummer22/data/clean 2021 CA disengagement.xlsx", sheet_name=0, parse_dates=["DATE"])
+# load the data
+data: pds.DataFrame = parser.data
 manufacturer_data = data["Manufacturer"].values
-location_data = data["DISENGAGEMENT\nLOCATION\n(Interstate, Freeway, Highway, Rural Road, Street, or Parking Facility)"].values
-output = parser.output#data["output"].values
+location_data = [v.upper() for v in data["DISENGAGEMENT\nLOCATION\n(Interstate, Freeway, Highway, Rural Road, Street, or Parking Facility)"].values]
+output = parser.output
 cond = data["condensed"].values
-proportional = True
+proportional = False
 incidents = [Incident(row) for row in zip(manufacturer_data, data["DATE"].values, location_data, parser.location_encoding, cond, output)]
-
-# outliers in the data
-# todo: check the ommisions caught by the av - lines [1030, 1034]: Perception discrepancy; On city road in moderate traffic with light rain during day -> only perception errors caught by av
-# todo: check the apple that caught the traj error - line 125: Incorrect prediction led to undesirable motion plan -> only time Apple caught trajectory error
+"""
+outliers in the data
+check the ommisions caught by the av - lines [1030, 1034]:
+  Perception discrepancy; On city road in moderate traffic with light rain during day -> only perception errors caught by av
+check the apple that caught the traj error - line 125:
+  Incorrect prediction led to undesirable motion plan -> only time Apple caught trajectory error
+waymo had one human caught software bug - lines [2456, 2577]:
+  Disengage for a software discrepancy for which our vehicle's diagnostics received a message indicating a potential performance issue with a software component -> interestingly same description the next day and auto disengage
+mercedes had one human caught software bug: line 1061
+  A general error caused the system to stop the engaged status. Vehicle not in an active construction zone. No emergency vehicles or collisions present in the vicinity. Weather and/or road conditions dry in the area. -> notably only datum in section disengaged by 'Driver' instead of 'Test Driver'
+easymile has a lot of unexpected activations and commissions
+check why mercedes is catching much more traj than everyone else
+"""
 if __name__ == '__main__':
+    ### histograms
+    # manufacturer
+    bar("disengagement by manufacturer", manufacturer_data, output, proportion=proportional)
+    # date
+    bar("disengagement by months since 2020", [f"Month-{int(d)}" for d in parser.date_encoding], output, sorter=sort_month, proportion=proportional)
+    # road type
+    bar("disengagement by road type", location_data, output, proportion=proportional)
+    # condensed causes
+    bar("disengagement by cause", cond, output, proportion=proportional)
+
     # print(len(Incident.matching(lambda i: i.condensed == "ODD" and i.av_disengage == 0)))
     # bar(manufacturer_data, output, "manu", "out", proportion=proportional)
     # freq_bar(manufacturer_data, cond, "manu", "cond", proportion=proportional)
@@ -103,5 +153,16 @@ if __name__ == '__main__':
     # om = Incident.matching(lambda i: i.condensed == "Omission (perception error)" and i.av_disengage)
     # print([o.line for o in om])
 
-    traj = Incident.matching(lambda i: i.condensed == "Trajectory anomaly" and i.manu == "APPLE INC." and i.av_disengage)
-    print([i.line for i in traj])
+    # traj = Incident.matching(lambda i: i.condensed == "Trajectory anomaly" and i.manu == "APPLE INC." and i.av_disengage)
+    # print([i.line for i in traj])
+
+    # for manu in list(set(manufacturer_data)):
+    #     stuff = Incident.matching(lambda i: i.manu == manu)
+    #     bar([i.condensed for i in stuff], [i.av_disengage for i in stuff], "condition", manu, proportion=False)
+
+    # x = Incident.matching(lambda i: "WAYMO LLC" == i.manu and not i.av_disengage and i.condensed == "Software failure")
+    # print([i.line for i in x])
+
+    # x = Incident.matching(
+    #     lambda i: "mercedes" in i.manu.lower() and not i.av_disengage and i.condensed == "Software failure")
+    # print([i.line for i in x])
