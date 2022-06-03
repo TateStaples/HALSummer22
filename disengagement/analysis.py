@@ -80,7 +80,7 @@ def two_var_bar(x_categories: list, y_categories: list, x_label:str, y_label:str
 
 def bar(title: str, x, sucess, sorter=sort_largest, proportion=False):
     """
-    Creates a bar chart of how often category
+    Creates a bar chart of how often category. Shows and saves it.
     :param title:
     :param x: list of categorical variable
     :param sucess: list paired with x if that datum was cancelled by the av (bool_
@@ -107,6 +107,8 @@ def bar(title: str, x, sucess, sorter=sort_largest, proportion=False):
         ax.bar_label(bars, labels=[f"{round(x*100, 2)}%" for x in s_matches])
     ax.legend()
     plt.title(title)
+
+    plt.savefig('imgs/' + title.replace(' ', '_') + '.png', format='png')
     plt.show()
 
 # load the data
