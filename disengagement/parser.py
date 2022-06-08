@@ -78,7 +78,7 @@ output = [1 if "AV" in datum or datum == "Software" else 0 for datum in data["DI
 print(set(np.array(output)[np.where(np.array(auto_encoding) == 0)]))
 
 ## cause
-cause_encoding = one_hot_encode(data["condensed"].values)
+cause_encoding = one_hot_encode(data["Fcondensed"].values)
 
 if __name__ == '__main__':
     # store formatted data into the recording

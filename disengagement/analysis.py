@@ -150,7 +150,7 @@ data: pds.DataFrame = parser.data
 manufacturer_data = data["Manufacturer"].values
 location_data = [v.upper() for v in data["DISENGAGEMENT\nLOCATION\n(Interstate, Freeway, Highway, Rural Road, Street, or Parking Facility)"].values]
 output = parser.output
-cond = data["condensed"].values
+cond = data["Fcondensed"].values
 proportional = False
 incidents = [Incident(row) for row in zip(manufacturer_data, data["DATE"].values, location_data, parser.location_encoding, cond, output)]
 """
