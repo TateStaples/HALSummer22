@@ -70,9 +70,12 @@ location_encoding = [location_indices.index(loc.lower()) for loc in data["DISENG
 
 ## auto capable
 auto_encoding = [0 if "no" == datum.lower() else 1 for datum in data['VEHICLE IS CAPABLE OF OPERATING WITHOUT A DRIVER\n(Yes or No)'].values]
+# capable = ('QCRAFT INC.', 'GATIK AI INC.', 'VALEO NORTH AMERICA INC.', 'AURORA OPERATIONS, INC.', 'EASYMILE', 'APPLE INC.', 'MERCEDES-BENZ RESEARCH & DEVELOPMENT NORTH AMERICA, INC.', 'WAYMO LLC')
+# auto_encoding = [manu in capable for manu in data["Manufacturer"].values]
 
 ## output - operator/comp
 output = [1 if "AV" in datum or datum == "Software" else 0 for datum in data["DISENGAGEMENT INITIATED BY\n(AV System, Test Driver, Remote Operator, or Passenger)"].values]
+print(set(np.array(output)[np.where(np.array(auto_encoding) == 0)]))
 
 ## cause
 cause_encoding = one_hot_encode(data["condensed"].values)

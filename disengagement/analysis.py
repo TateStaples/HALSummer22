@@ -1,6 +1,7 @@
 import pandas as pds
 from matplotlib import pyplot as plt
 import parser
+import typing
 
 
 # thing for making graphs to search for outliers and make category bar charts
@@ -14,6 +15,14 @@ date v output - hist of proportions
 cause v output - bar
 overall ratios
 """
+
+
+def list_to_dict(l: list) -> dict:
+    out = dict()
+    for item in l:
+        if item in out: out[item] += 1
+        else: out[item] = 1
+    return out
 
 
 class Incident:
@@ -111,6 +120,20 @@ def bar(title: str, x, sucess, sorter=sort_largest, proportion=False):
     plt.savefig('imgs/' + title.replace(' ', '_') + '.png', format='png')
     plt.show()
 
+
+def hist(title: str, x: list, proportion=False):
+    fig, ax = plt.subplots()
+    counts = list_to_dict(x)
+    item = sorted(counts.keys(), key=lambda x: counts[x])
+    small_label = [s.split()[0][:8] for s in item]
+    heights = [counts[i] for i in item]
+    ax.barh(small_label, heights)
+    plt.title(title)
+
+    plt.savefig('imgs/' + title.replace(' ', '_') + '.png', format='png')
+    plt.show()
+
+
 # load the data
 data: pds.DataFrame = parser.data
 manufacturer_data = data["Manufacturer"].values
@@ -136,12 +159,35 @@ if __name__ == '__main__':
     ### histograms
     # manufacturer
     bar("disengagement by manufacturer", manufacturer_data, output, proportion=proportional)
+    hist("disengagement count by manufacturer", manufacturer_data)
     # date
     bar("disengagement by months since 2020", [f"Month-{int(d)}" for d in parser.date_encoding], output, sorter=sort_month, proportion=proportional)
+    plt.hist(parser.date_encoding)
+    plt.title("disengagement count by month")
+    plt.savefig('imgs/' + "disengagement count by month".replace(' ', '_') + '.png', format='png')
+    plt.boxplot(parser.date_encoding)
+    plt.savefig('imgs/' + "disengagement dist by month".replace(' ', '_') + '.png', format='png')
     # road type
     bar("disengagement by road type", location_data, output, proportion=proportional)
+    hist("road type counts", location_data)
     # condensed causes
     bar("disengagement by cause", cond, output, proportion=proportional)
+    hist("cause counts", cond)
+
+    # target variables
+    hist("output counts", ["av" if o else "human" for o in output])
+
+    # auto capable
+    hist("auto capable counts", ["auto capable" if a else "autoless" for a in parser.auto_encoding])
+
+    # raw cause
+    raw_causes = data["DESCRIPTION OF FACTS CAUSING DISENGAGEMENT"].values
+    raw_set = list(set(raw_causes))
+    hist("raw cause counts", [str(raw_set.index(c)) for c in raw_causes])
+
+    # driver present
+    hist("driver present counts", [d.upper() for d in data["DRIVER PRESENT\n(Yes or No)"].values])
+
 
     # print(len(Incident.matching(lambda i: i.condensed == "ODD" and i.av_disengage == 0)))
     # bar(manufacturer_data, output, "manu", "out", proportion=proportional)
