@@ -1,7 +1,6 @@
 import pandas as pds
 from matplotlib import pyplot as plt
 import parser
-import typing
 
 
 # thing for making graphs to search for outliers and make category bar charts
@@ -18,6 +17,11 @@ overall ratios
 
 
 def list_to_dict(l: list) -> dict:
+    """
+    Convert list of items into map of item->count
+    :param l: list of items
+    :return: dictionary with set of items as keys and # of occurrences as the output
+    """
     out = dict()
     for item in l:
         if item in out: out[item] += 1
@@ -87,7 +91,7 @@ def two_var_bar(x_categories: list, y_categories: list, x_label:str, y_label:str
     plt.show()
 
 
-def bar(title: str, x, sucess, sorter=sort_largest, proportion=False):
+def bar(title: str, x: list, sucess: list, sorter=sort_largest, proportion=False):
     """
     Creates a bar chart of how often category. Shows and saves it.
     :param title:
@@ -122,6 +126,13 @@ def bar(title: str, x, sucess, sorter=sort_largest, proportion=False):
 
 
 def hist(title: str, x: list, proportion=False):
+    """
+    Creates a histogram with the counts of a collection of categories
+    :param title: what to save the plot as
+    :param x: column of categorical variables
+    :param proportion: absolute or relative freq
+    :return:
+    """
     fig, ax = plt.subplots()
     counts = list_to_dict(x)
     item = sorted(counts.keys(), key=lambda x: counts[x])
