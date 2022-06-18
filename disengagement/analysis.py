@@ -167,6 +167,7 @@ easymile has a lot of unexpected activations and commissions
 check why mercedes is catching much more traj than everyone else
 """
 if __name__ == '__main__':
+
     ### histograms
     # manufacturer
     bar("disengagement by manufacturer", manufacturer_data, output, proportion=proportional)

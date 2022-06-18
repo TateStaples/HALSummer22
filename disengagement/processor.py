@@ -14,15 +14,16 @@ input: np.array = np.array(data.values.tolist())[:, :-1]
 # create adn fit the tree
 tree = DecisionTreeClassifier(criterion="gini", max_depth=5)
 tree.fit(input, output)
-tree.tree_.children_left
 
 # output the results
 feature_names = [str(col).split()[0] for col in data.columns][:-1]
-plot_tree(tree, label="root", filled=True, feature_names=feature_names, class_names=("human", "av"), impurity=False, fontsize=5)
+plot_tree(tree, label="root", filled=True, feature_names=feature_names, class_names=("human", "av"), impurity=False, fontsize=4)
+plt.savefig("tree.png")
 plt.show()
 
 print(export_text(tree, feature_names=feature_names))
 print(tree.score(input, output))
+export_text()
 
 
 if __name__ == '__main__':

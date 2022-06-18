@@ -8,36 +8,17 @@ import pandas as pds
 import numpy as np
 from excel_cleaner import condensed
 
+path = "/Users/22staples/PycharmProjects/HALSummer22/data/F_CleanData1.xlsx"
+data: pds.DataFrame = pds.read_excel(path, sheet_name="Mature")
+data: pds.DataFrame = data.iloc[:, 1:7]
 
-data: pds.DataFrame = pds.read_excel("/Users/22staples/PycharmProjects/HALSummer22/data/clean 2021 CA disengagement.xlsx", sheet_name=0, parse_dates=["DATE"])
-makers = list(set(data["Manufacturer"]))
 
-
-def debug():
-    """
-    debugs what values we have.
-    Was using this when I was trying to figure out how these things work
-    :return:
-    """
-    disengagements = set(data["DISENGAGEMENT INITIATED BY\n(AV System, Test Driver, Remote Operator, or Passenger)"]) # remote and passenger aren't in the data
-    locations = set(data["DISENGAGEMENT\nLOCATION\n(Interstate, Freeway, Highway, Rural Road, Street, or Parking Facility)"])
-    descriptions = list(set(data["DESCRIPTION OF FACTS CAUSING DISENGAGEMENT"]))
-    auto = set(data['VEHICLE IS CAPABLE OF OPERATING WITHOUT A DRIVER\n(Yes or No)'])
-    driver = set(data['DRIVER PRESENT\n(Yes or No)'])
-    print(f"{makers=}") # {'TOYOTA RESEARCH INSTITUTE, INC.', 'ZOOX, INC', 'GATIK AI INC.', 'NURO, INC', 'MERCEDES-BENZ RESEARCH & DEVELOPMENT NORTH AMERICA, INC.', 'ARGO AI, LLC', 'AIMOTIVE INC.', 'NISSAN NORTH AMERICA, INC DBA ALLIANCE INNOVATION LAB', 'AUTOX TECHNOLOGIES, INC', 'LYFT', 'UDELV, INC.', 'APOLLO AUTONOMOUS DRIVING USA LLC', 'NVIDIA', 'APPLE INC.', 'WERIDE CORP', 'DIDI RESEARCH AMERICA LLC', 'PONY.AI, INC.', 'DEEPROUTE.AI', 'VALEO NORTH AMERICA INC.', 'AURORA OPERATIONS, INC.', 'WAYMO LLC', 'EASYMILE', 'CRUISE LLC', 'QUALCOMM TECHNOLOGIES, INC.', 'QCRAFT INC.'}
-    print(f"{len(makers)}") # 25
-    print(f"{disengagements=}") # {'Operator', 'AV System - Emergency Stop', 'Test Drive', 'Test Driver - Soft Stop', 'Driver', 'Software', 'Test Driver', 'AV System'}
-    print(f"{locations=}") #{'freeway', 'Street', 'Highway', 'STREET', 'HIGHWAY', 'street', 'Freeway', 'Parking Facility'}
-    print(f"{len(descriptions)}")
-    print(data['VEHICLE IS CAPABLE OF OPERATING WITHOUT A DRIVER\n(Yes or No)'].sort_values().tail(100))
 '''
 Data Types - how each section is being encoded:
 - Manufacturer: Categorical - categorical
-- date: numeric - either days since 2021 or whatever SGO align has
-- auto capable: boolean - 1/0 (only true for udelv, inc)
-- driver: boolean - 1/0 (data irrelevant because output always yes)
+- date: numeric - months since 2020 or whatever SGO align has
 - disengagement: boolean - 1/0 **(output)**
-- location: categorical - potential slight numeric by speed
+- location: boolean - limited (street) or unlimited (highway)
 - description: categorical
 '''
 ### ----- embedding section ----- ###
@@ -60,33 +41,31 @@ def one_hot_encode(values):
 manu_encoding = one_hot_encode(data["Manufacturer"].values)
 
 ## dates
-base = np.datetime64("2020-01-01")
-date_encoding = [pds.to_timedelta(time - base).days / 30 for time in data["DATE"].values]
+date_encoding = data["Months after 2020"].values
 
 ## location encoding
-# note: rural road is nowhere in the dataset
-location_indices = ("interstate", "freeway", "highway", "rural road", "street", "parking facility")
-location_encoding = [location_indices.index(loc.lower()) for loc in data["DISENGAGEMENT\nLOCATION\n(Interstate, Freeway, Highway, Rural Road, Street, or Parking Facility)"].values]
+location_encoding = [1 if d == "STREET" else 0 for d in data["location"].values]
 
 ## auto capable
-auto_encoding = [0 if "no" == datum.lower() else 1 for datum in data['VEHICLE IS CAPABLE OF OPERATING WITHOUT A DRIVER\n(Yes or No)'].values]
+# auto_encoding = [0 if "no" == datum.lower() else 1 for datum in data['VEHICLE IS CAPABLE OF OPERATING WITHOUT A DRIVER\n(Yes or No)'].values]
 # capable = ('QCRAFT INC.', 'GATIK AI INC.', 'VALEO NORTH AMERICA INC.', 'AURORA OPERATIONS, INC.', 'EASYMILE', 'APPLE INC.', 'MERCEDES-BENZ RESEARCH & DEVELOPMENT NORTH AMERICA, INC.', 'WAYMO LLC')
 # auto_encoding = [manu in capable for manu in data["Manufacturer"].values]
 
 ## output - operator/comp
-output = [1 if "AV" in datum or datum == "Software" else 0 for datum in data["DISENGAGEMENT INITIATED BY\n(AV System, Test Driver, Remote Operator, or Passenger)"].values]
-print(set(np.array(output)[np.where(np.array(auto_encoding) == 0)]))
+output = [1 if datum else 0 for datum in data["av disengage"].values]
 
 ## cause
-cause_encoding = one_hot_encode(data["Fcondensed"].values)
+cause_encoding = one_hot_encode(data["condensed"].values)
 
 if __name__ == '__main__':
     # store formatted data into the recording
     storage = pds.DataFrame()
+    makers = list(set(data["Manufacturer"].values))
     for i in range(len(manu_encoding)): storage[makers[i]] = manu_encoding[i]  # manufacturer
     storage['date'] = date_encoding  # days after 2020
-    storage["road"] = location_encoding
-    storage["auto capable"] = auto_encoding
+    storage["limited road"] = location_encoding
+    # storage["auto capable"] = auto_encoding
+    condensed = list(set(data["condensed"].values))
     for i in range(len(cause_encoding)): storage[condensed[i]] = cause_encoding[i]
     storage["output"] = output
     storage.to_excel("disengagement/encoded.xlsx", index=False)
