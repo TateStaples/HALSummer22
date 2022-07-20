@@ -1,0 +1,186 @@
+{
+"customLevel": 100,
+"duration": "30",
+"digitalSign": "1",
+"delays": [
+    10,
+    10,
+    10,
+    10,
+    10
+],
+"altRoutes": "auto",
+"altRoutesStatus": "auto",
+"numRoutes": "2",
+"advanced": false,
+"speedFactor": [
+    1,
+    1,
+    1
+],
+"speedDev": [
+    0.1,
+    0.1,
+    0.1
+],
+"simTime": 2000,
+"errorLanes": "",
+"errorAltRoutes": "",
+"errorAlert": "",
+"location": "custom location",
+"locationStatus": "done",
+"traffic": "normal: 4290 cars/hr",
+"customTraffic": 2640,
+"localLevels": "posted speed",
+"truckRatio": "10% : 90%",
+"cars_ratio": {
+    "label": "Passenger cars",
+    "vratio": "50% : 50% : 0%",
+    "ctvratio": "25% : 75%",
+    "tvratio": "50% : 50%"
+},
+"trucks_ratio": {
+    "label": "Trucks",
+    "vratio": "50% : 50% : 0%",
+    "ctvratio": "25% : 75%",
+    "tvratio": "50% : 50%"
+},
+"lanes": "rightmost + 2",
+"testRoutingMap": false,
+"testTripSummaries": false,
+"customLocation": {
+    "edge": "437690590",
+    "pos": "210",
+    "lat": 35.88595225947674,
+    "lng": -78.84353236658423
+},
+"digital_sign_locations": [
+    [
+        5363,
+        8967
+    ]
+],
+"manual_route": "",
+"scenario_settings": {
+    "path": "i40",
+    "zoom": {
+        "max": 17,
+        "min": 13,
+        "init": 13
+    },
+    "location": "custom location",
+    "location 1": {
+        "edge": "437690590",
+        "pos": "210",
+        "lat": 35.88595225947674,
+        "lng": -78.84353236658423
+    },
+    "location 2": {
+        "edge": "437690590",
+        "pos": "210",
+        "lat": 35.88595225947674,
+        "lng": -78.84353236658423
+    },
+    "highway_route": "711719226#0 711719226#0-AddedOffRampEdge 711719226#1 682587601 682587602 682587602-AddedOffRampEdge 591248241 591248236 28970966 533252553 533252552 120885446#0 120885446#0-AddedOffRampEdge 120885446#1 437690595 437690592 437690590 437690589 437690587 437690587-AddedOffRampEdge 437690586 437690582#0 437690582#1-AddedOnRampEdge 437690582#1 437690580 437690579#0 437690579#0-AddedOffRampEdge 437690579#1 693786444 437690578#0-AddedOnRampEdge 437690578#0 437690578#0-AddedOffRampEdge 437690578#1",
+    "highway_splits": [],
+    "depart_speed": 65,
+    "depart_lanes": 3,
+    "runtime": "300",
+    "digital_signs": [
+        [
+            35.90288654391237,
+            -78.88194322586061
+        ],
+        [
+            35.90683192666559,
+            -78.90095472335817
+        ],
+        [
+            35.89426511127807,
+            -78.86106491088869
+        ],
+        [
+            35.89426511127807,
+            -78.86106491088869
+        ],
+        [
+            35.89426511127807,
+            -78.86106491088869
+        ]
+    ],
+    "places": [
+        {
+            "type": "school",
+            "name": "Pleasant Grove Elementary School",
+            "lat": 35.887433349720446,
+            "lng": -78.82073521614076
+        },
+        {
+            "type": "school",
+            "name": "Acuity Public Schools",
+            "lat": 35.88281766573317,
+            "lng": -78.84234309196474
+        },
+        {
+            "type": "school",
+            "name": "Kestrel Heights School",
+            "lat": 35.89815877777936,
+            "lng": -78.8900113105774
+        },
+        {
+            "type": "school",
+            "name": "Kestrel elementary school",
+            "lat": 35.89717668799506,
+            "lng": -78.89142751693727
+        },
+        {
+            "type": "school",
+            "name": "Pearsontown Elementary School",
+            "lat": 35.93230706187119,
+            "lng": -78.90842199325563
+        },
+        {
+            "type": "school",
+            "name": "Parkwood Elementary School",
+            "lat": 35.89141426972656,
+            "lng": -78.9060938358307
+        },
+        {
+            "type": "school",
+            "name": "Global Montessori Academy",
+            "lat": 35.8716902407459,
+            "lng": -78.89057993888856
+        },
+        {
+            "type": "fire station",
+            "name": "Durham Fire Station 12",
+            "lat": 35.91514787108289,
+            "lng": -78.89751076698305
+        },
+        {
+            "type": "fire station",
+            "name": "Durham Fire Station 18",
+            "lat": 35.89522985453054,
+            "lng": -78.91199469566347
+        },
+        {
+            "type": "fire station",
+            "name": "Raleigh Fire Station 24",
+            "lat": 35.90180891618695,
+            "lng": -78.79671335220338
+        },
+        {
+            "type": "fire station",
+            "name": "Morrisville Fire and Rescue Department 2",
+            "lat": 35.84554333704231,
+            "lng": -78.83542299270631
+        },
+        {
+            "type": "school",
+            "name": "Lowe\\'s Grove Middle School",
+            "lat": 35.90429439028537,
+            "lng": -78.8912343978882
+        }
+    ]
+}
+}
