@@ -1,0 +1,293 @@
+Manufacturer,Months Since Dec 2020,location,condensed,av disengage
+WAYMO LLC,0,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,3,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,10,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,10,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,10,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,10,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,10,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,10,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,10,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,11,Non-Highway,Hardware failure,TRUE
+WAYMO LLC,0,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,0,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,0,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,1,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,1,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,1,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,1,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,1,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,2,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,2,Highway,Commission (perception error),FALSE
+WAYMO LLC,2,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,4,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,4,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,4,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,4,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,4,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,5,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,5,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,5,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,6,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Highway,Commission (perception error),FALSE
+WAYMO LLC,7,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,8,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,9,Highway,Commission (perception error),FALSE
+WAYMO LLC,9,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,9,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,9,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,10,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,10,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,10,Highway,Commission (perception error),FALSE
+WAYMO LLC,11,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,11,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,11,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,11,Non-Highway,Commission (perception error),FALSE
+WAYMO LLC,0,Non-Highway,Precautionary,FALSE
+WAYMO LLC,1,Non-Highway,Precautionary,FALSE
+WAYMO LLC,1,Non-Highway,Precautionary,FALSE
+WAYMO LLC,2,Non-Highway,Precautionary,FALSE
+WAYMO LLC,2,Non-Highway,Precautionary,FALSE
+WAYMO LLC,4,Non-Highway,Precautionary,FALSE
+WAYMO LLC,4,Non-Highway,Precautionary,FALSE
+WAYMO LLC,5,Non-Highway,Precautionary,FALSE
+WAYMO LLC,5,Non-Highway,Precautionary,FALSE
+WAYMO LLC,5,Non-Highway,Precautionary,FALSE
+WAYMO LLC,5,Non-Highway,Precautionary,FALSE
+WAYMO LLC,6,Non-Highway,Precautionary,FALSE
+WAYMO LLC,6,Non-Highway,Precautionary,FALSE
+WAYMO LLC,6,Non-Highway,Precautionary,FALSE
+WAYMO LLC,7,Non-Highway,Precautionary,FALSE
+WAYMO LLC,7,Non-Highway,Precautionary,FALSE
+WAYMO LLC,7,Non-Highway,Precautionary,FALSE
+WAYMO LLC,8,Non-Highway,Precautionary,FALSE
+WAYMO LLC,8,Non-Highway,Precautionary,FALSE
+WAYMO LLC,8,Non-Highway,Precautionary,FALSE
+WAYMO LLC,9,Non-Highway,Precautionary,FALSE
+WAYMO LLC,9,Non-Highway,Precautionary,FALSE
+WAYMO LLC,10,Non-Highway,Precautionary,FALSE
+WAYMO LLC,10,Non-Highway,Precautionary,FALSE
+WAYMO LLC,1,Non-Highway,Software failure,TRUE
+WAYMO LLC,1,Non-Highway,Software failure,TRUE
+WAYMO LLC,1,Non-Highway,Software failure,TRUE
+WAYMO LLC,1,Non-Highway,Software failure,TRUE
+WAYMO LLC,1,Non-Highway,Software failure,TRUE
+WAYMO LLC,2,Non-Highway,Software failure,TRUE
+WAYMO LLC,2,Non-Highway,Software failure,TRUE
+WAYMO LLC,2,Non-Highway,Software failure,TRUE
+WAYMO LLC,2,Non-Highway,Software failure,TRUE
+WAYMO LLC,2,Non-Highway,Software failure,TRUE
+WAYMO LLC,2,Non-Highway,Software failure,TRUE
+WAYMO LLC,2,Non-Highway,Software failure,TRUE
+WAYMO LLC,3,Non-Highway,Software failure,TRUE
+WAYMO LLC,3,Non-Highway,Software failure,TRUE
+WAYMO LLC,3,Non-Highway,Software failure,TRUE
+WAYMO LLC,3,Non-Highway,Software failure,TRUE
+WAYMO LLC,3,Non-Highway,Software failure,TRUE
+WAYMO LLC,3,Non-Highway,Software failure,TRUE
+WAYMO LLC,3,Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,4,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Highway,Software failure,TRUE
+WAYMO LLC,5,Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,5,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,FALSE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,6,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,7,Non-Highway,Software failure,TRUE
+WAYMO LLC,8,Non-Highway,Software failure,TRUE
+WAYMO LLC,8,Non-Highway,Software failure,TRUE
+WAYMO LLC,8,Non-Highway,Software failure,TRUE
+WAYMO LLC,9,Non-Highway,Software failure,TRUE
+WAYMO LLC,9,Non-Highway,Software failure,TRUE
+WAYMO LLC,9,Non-Highway,Software failure,TRUE
+WAYMO LLC,9,Non-Highway,Software failure,TRUE
+WAYMO LLC,9,Non-Highway,Software failure,TRUE
+WAYMO LLC,9,Non-Highway,Software failure,TRUE
+WAYMO LLC,10,Non-Highway,Software failure,TRUE
+WAYMO LLC,10,Non-Highway,Software failure,TRUE
+WAYMO LLC,10,Non-Highway,Software failure,TRUE
+WAYMO LLC,10,Non-Highway,Software failure,TRUE
+WAYMO LLC,10,Non-Highway,Software failure,TRUE
+WAYMO LLC,10,Non-Highway,Software failure,TRUE
+WAYMO LLC,11,Non-Highway,Software failure,FALSE
+WAYMO LLC,3,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,3,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,4,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,6,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,6,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,7,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,10,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,0,Non-Highway,Trajectory anomaly,TRUE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,TRUE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,1,Non-Highway,Trajectory anomaly,TRUE
+WAYMO LLC,2,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,2,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,2,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,2,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,2,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,2,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,3,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,3,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,3,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,3,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,4,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,4,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,4,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,4,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,4,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,5,Non-Highway,Trajectory anomaly,TRUE
+WAYMO LLC,5,Highway,Trajectory anomaly,TRUE
+WAYMO LLC,5,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,5,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,6,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,6,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,6,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,6,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,7,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,7,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,7,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,7,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,7,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,8,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,8,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,8,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,8,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,8,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,8,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,8,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,9,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,9,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,9,Non-Highway,Trajectory anomaly,TRUE
+WAYMO LLC,10,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,10,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,10,Non-Highway,Trajectory anomaly,TRUE
+WAYMO LLC,10,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,10,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,10,Non-Highway,Trajectory anomaly,TRUE
+WAYMO LLC,11,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,11,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,11,Non-Highway,Trajectory anomaly,FALSE
+WAYMO LLC,11,Non-Highway,Trajectory anomaly,FALSE
